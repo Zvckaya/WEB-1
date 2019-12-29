@@ -1,0 +1,75 @@
+<html>
+<head>
+  <style>
+    body{
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+<canvas id="manduClock" width="480" height="480"></canvas>
+<script type="text/javascript">
+	var canvas= document.getElementById("manduClock");
+	var cx = canvas.getContext("2d");
+	var numX = 240;
+	var numY = 240;
+	var dist = Math.PI/180;
+	setInterval(
+		function(){
+			canvas.width = canvas.width;
+			var g = cx.createRadialGradient(140,140,0,70,70,500);
+			cx.fillStyle = g;
+			cx.fill();
+			cx.textAlign = "center";
+			cx.textBaseline = "middle";
+			cx.font = "bold 25px sans-serif";
+			cx.fillStyle = "black";
+			cx.fillText("1",numX+(110*Math.cos(300 * dist)),numY+(110*Math.sin(300 * dist)));
+			cx.fillText("2",numX+(110*Math.cos(330 * dist)),numY+(110*Math.sin(330 * dist)));
+			cx.fillText("3",numX+(110*Math.cos(0 * dist)),numY+(110*Math.sin(0 * dist)));
+			cx.fillText("4",numX+(110*Math.cos(30 * dist)),numY+(110*Math.sin(30 * dist)));
+			cx.fillText("5",numX+(110*Math.cos(60 * dist)),numY+(110*Math.sin(60 * dist)));
+			cx.fillText("6",numX+(110*Math.cos(90 * dist)),numY+(110*Math.sin(90 * dist)));
+			cx.fillText("7",numX+(110*Math.cos(120 * dist)),numY+(110*Math.sin(120 * dist)));
+			cx.fillText("8",numX+(110*Math.cos(150 * dist)),numY+(110*Math.sin(150 * dist)));
+			cx.fillText("9",numX+(110*Math.cos(180 * dist)),numY+(110*Math.sin(180 * dist)));
+			cx.fillText("10",numX+(110*Math.cos(210 * dist)),numY+(110*Math.sin(210 * dist)));
+			cx.fillText("11",numX+(110*Math.cos(240 * dist)),numY+(110*Math.sin(240 * dist)));
+			cx.fillText("12",numX+(110*Math.cos(270 * dist)),numY+(110*Math.sin(270 * dist)));
+			cx.beginPath();
+			cx.moveTo(numX, numY);
+			var sec = new Date().getSeconds();
+
+
+			cx.stroke();
+			cx.beginPath();
+			cx.moveTo(numX, numY);
+			var min = new Date().getMinutes();
+			var minAng = 360/60 * min * dist +300;
+			cx.moveTo(numX, numY);
+			cx.lineTo(numX+(70*Math.cos(minAng)), numY+(70*Math.sin(minAng)));
+			cx.stroke();
+			cx.beginPath();
+			cx.moveTo(numX, numY);
+			var hour = new Date().getHours();
+			var ap = hour / 2;
+			hour = hour%12;
+			var hourAng = 360/12 * hour * dist +300;
+			cx.moveTo(numX, numY);
+			cx.lineTo(numX+(50*Math.cos(hourAng)), numY+(50*Math.sin(hourAng)));
+			cx.stroke();
+
+			if(ap = 1){
+				cx.fillText("PM",150,420);
+			} else {
+				cx.fillText("AM",150,420);
+			}
+			cx.fillText(hour+" : ",200,420);
+			cx.fillText(min+" : ",250,420);
+			cx.fillText(sec,300,420);
+		}
+	);
+
+</script>
+</body>
+</html>

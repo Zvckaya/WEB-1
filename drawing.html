@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>그림판</title></head>
+<body onload="init()">
+<h3>그림판</h3>
+<hr>
+<canvas id="myCanvas" style="border:2px solid black;" width="600" height="400">
+</canvas>
+<script>
+var canvas, context;
+function init() {
+	canvas = document.getElementById("myCanvas");
+	context = canvas.getContext("2d");
+
+	context.lineWidth = 2;
+	context.strokeStyle = "blue";
+
+	canvas.addEventListener("mousemove", function (e) { move(e) }, false);
+	canvas.addEventListener("mousedown", function (e) { down(e) }, false);
+	canvas.addEventListener("mouseup", function (e) { up(e) }, false);
+	canvas.addEventListener("mouseout", function (e) { out(e) }, false);
+}
+
+var startX=0, startY=0;
+var drawing=false;
+function draw(curX, curY) {
+	context.beginPath();
+	context.moveTo(startX, startY);
+	context.lineTo(curX, curY);
+	context.stroke();
+}
+function down(e) {
+	startX = e.offsetX; startY = e.offsetY;
+	drawing = true;
+}
+function up(e) { drawing = false; }
+function move(e) {
+	if(!drawing) return;
+	var curX = e.offsetX, curY = e.offsetY;
+	draw(curX, curY);
+	startX = curX; startY = curY;
+}
+function out(e) { drawing = false; }
+</script>
+<br>
+선굵기:<input type="text" style="width:50px" value="0" onchange="context.lineWidth=this.value">
+선 색 : <input type="color" id="colorInput" value="context.strokeStyle" onchange="context.strokeStyle=this.value">
+</body>
+
+</html>

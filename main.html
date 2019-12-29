@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="kor" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css" />
+    <script src="http://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="http://kenwheeler.github.io/slick/slick/slick.min.js"></script>
+    <link rel="stylesheet" href="style/animate.css">
+    <script src="WOW-master\dist\wow.min.js"></script>
+              <script>
+              new WOW().init();
+              </script>
+    <title>My college life introduction</title>
+    <base href="https://zvckaya.github.io/WEB-1/">
+    <script type="text/javascript">
+    wow = new WOW(
+                  {
+                  boxClass:     'wow',      // default
+                  animateClass: 'animated', // default
+                  offset:       0,          // default
+                  mobile:       true,       // default
+                  live:         true        // default
+                }
+                )
+                wow.init();
+    </script>
+
+  </head>
+  <body>
+    <div class="topmenu" >
+      <div class="headd">
+        <div id="header" style="margin-bottom:10px">
+          <header>
+            <a href="main.html">
+            <img src="image/reallogo.png" alt="logo" width="260px" height="60px"></a>
+          </header>
+        </div>
+        <!---->
+        <div id="nav">
+          <nav>
+            <ul>
+              <li style="margin-left:0px;"><a href="introduce.html" >학기목표</a></li>
+              <li><a href="subject.html">수강과목 소개</a></li>
+              <li><a href="time.html">수업시간표</a></li>
+              <li><a href="active.html">교내외 활동</a></li>
+              <li><a href="survey.html" target="_blank">설문조사</a></li>
+              <li><a href="machine.html"target="_blank">계산기</a></li>
+              <li><a href="drawing.html"target="_blank">그림판</a></li>
+              <li><a href="clock.html"target="_blank">시계</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="mail" style="color:#585858">
+          <!--<img src="image/mail.png" style="border-left:90px;"width="20px" height="20px"alt=""> :연락하기-->
+        </div>
+      </div>
+    </div>
+    <div class="slide-menu">
+      <div class="slide">
+        <img src="image/mainimage1.jpg" alt="">
+      </div>
+      <div class="slide">
+        <img src="image/mainimage2.jpg" alt="">
+      </div>
+    </div>
+    <div class="wow fadeIn introduce">
+      <div style="margin-top:7%; margin-bottom:7%">
+      <h1>HEONAMGYU's PAGE</h1>
+      허남규의 대학생활, 살펴보세요
+      </div>
+    </div>
+    <div class="wow fadeIn main-back">
+      <div class="main">
+        <div class="m-1" >
+          <h3>머하는 놈이에요?</h3>
+          섬에서 13년 <br>
+          산에서 3년 <br>
+          자연을 사랑하는<br>
+          남자,게임좋아하는<br>
+          유사 프로그래머
+        </div>
+        <div class="m-2">
+          <h3>게임좋아해요?</h3>
+          롤 아이디:허남규 <br>
+          스팀 아이디:hur0410<br>
+          블리자드:ura#3987<br>
+          그외 여러가지 게임
+        </div>
+        <div class="m-3">
+          <h3>코딩좋아해요?</h3>
+          주력 언어:c++,python<br>
+          만든것: 여러 프로그램<br>
+          교내 동아리: 개발자들 <br>
+          유사 프로그래머답게<br>
+          여러가지 합니다
+        </div>
+        <div class="m-4">
+          <h3>작업물있어요?</h3>
+          Road to Honor<br>
+          TEMPLE ADVENTURE<br>
+          시장 단타프로그램<br>
+          등등 여러가지..
+        </div>
+      </div>
+    </div>
+    <footer class="wow fadeIn">
+      <br>
+      <div class="aboutme">
+        <div class="me-1">
+          학번:201914109<br>
+          이름:허남규<br>
+          주소: 전라북도 대둔산로 133611<br>
+          전화번호: 010-7358-5567 (이메일로 연락 주세요)<br>
+          이메일:hur0410@gmail.com<br>
+        </div>
+        <div class="footer-img">
+          <img src="image/reallogo.png" alt="logo">
+        </div>
+      </div>
+      <br>
+      <div >
+        © 2019 All Rights Reserved. JKDLAB.COM | 201914109 | IT융합자율학부 | 이름:허남규 | hur0410@gmail.com | ALL Selfmade
+      </div><br>
+    </footer>
+    </body>
+  <script type="text/javascript">
+  $(document).ready(function () {
+  	$('.slide-menu').slick({
+
+  		autoplay : true,
+  		dots: true,
+  		speed : 300,
+  		infinite: true,
+  		autoplaySpeed: 4000 /* 이미지가 다른 이미지로 넘어 갈때의 텀 */,
+  		arrows: true,
+  		slidesToShow: 1,
+
+  		slidesToScroll: 1,
+
+  		fade: false
+
+  	});
+
+  });
+  </script>
+</html>

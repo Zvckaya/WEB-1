@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>계산기</title>
+    <style>
+
+    body{
+      margin: auto;
+      text-align: center;
+    }
+    div{
+      margin: 0px auto;
+    }
+        table {
+          margin: auto;
+          border-collapse: collapse;
+          border-radius: 7px;
+          overflow: hidden;
+          box-shadow: 0px 0px 20px #000;
+          border-color: lightgray;
+        }
+        td{
+            padding: 5px 10px;
+            text-align: center;
+        }
+        #right{
+          background-color:#F5A442;
+        }
+        tr #hightest {
+          background-color:#646464;
+
+        }
+        input {
+            text-align: right;
+            border: none;
+              background-color:#646464;
+
+        }
+        input:focus {
+            outline: none;
+
+        }
+    </style>
+</head>
+<body>
+  <div>
+
+      <h1>201914109 허남규 계산기</h1>
+      <h3>sin은 사용후 리셋하세요<br>
+        ^은 결과값이 제곱됩니다</h3>
+    <table border="1">
+        <tr>
+            <td colspan="4" id="hightest"style="border-bottom:0px">
+                <input type="text" id="display">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4" id="hightest" style="border-top:0px">
+                <input type="text" id="result">
+            </td>
+        </tr>
+        <tr>
+            <td class="normal" onclick="reset()">AC</td>
+            <td class="normal" onclick="ddouble()">^</td>
+            <td class="normal" onclick="ssin()">sin</td>
+            <td class="normal"onclick="add('/')" id="right">/</td>
+        </tr>
+        <tr>
+            <td class="normal"onclick="add(7)">7</td>
+            <td class="normal"onclick="add(8)">8</td>
+            <td class="normal"onclick="add(9)">9</td>
+            <td class="normal"onclick="add('*')"id="right">*</td>
+        </tr>
+        <tr>
+            <td class="normal"onclick="add(4)">4</td>
+            <td class="normal"onclick="add(5)">5</td>
+            <td class="normal"onclick="add(6)">6</td>
+            <td class="normal"onclick="add('-')"id="right">-</td>
+        </tr>
+        <tr>
+            <td class="normal"onclick="add(1)">1</td>
+            <td class="normal"onclick="add(2)">2</td>
+            <td class="normal"onclick="add(3)">3</td>
+            <td class="normal"onclick="add('+')"id="right">+</td>
+        </tr>
+        <tr>
+            <td class="normal"colspan="2" onclick="add(0)">0</td>
+            <td class="normal"onclick="add('.')">.</td>
+            <td class="normal"onclick="calculate()"id="right">=</td>
+        </tr>
+    </table>
+    <script>
+    var resetck = false;
+      var numberClicked = false;
+      function add (char) {
+
+          if(numberClicked == false) {
+              if(isNaN(char) == true) {
+
+              } else {
+                  document.getElementById('display').value += char;
+              }
+          } else {
+              document.getElementById('display').value += char;
+          }
+
+
+          if(isNaN(char) == true) {
+              numberClicked = false;
+          } else {
+              numberClicked = true;
+          }
+      }
+      function calculate() {
+        var display = document.getElementById('display');
+          var result = eval(display.value);
+          document.getElementById('result').value = result;
+
+      }
+      function ssin()
+      {
+        var display = document.getElementById('display');
+        var result = document.getElementById('result');
+        if(display.value!="")
+        {
+          result.value= Math.sin(display.value);
+        }
+      }
+      function ddouble(){
+        var display = document.getElementById('display');
+        var result = document.getElementById('result');
+        if(result.value=="")
+        {
+          result.value=display.value*display.value;
+        }
+        else {
+          result.value=result.value*result.value;
+        }
+      }
+      function reset() {
+
+         document.getElementById('display').value = "";
+         document.getElementById('result').value = "";
+
+      }
+  </script>
+  </div>
+</body>
+</html>
